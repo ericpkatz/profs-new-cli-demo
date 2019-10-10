@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha spec.js",
-    "test:dev": "mocha spec.js --watch"
+    "test": "DATABASE_URL=postgres://postgres@localhost/circle_test mocha spec.js",
+    "test:dev": "DATABASE_URL=postgres://localhost/profs_cli_db mocha spec.js --watch"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,8 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^7.12.1",
+    "sequelize": "^5.19.5"
   }
 }
